@@ -48,7 +48,7 @@ def test_utterances_func(validator, job_name):  # pragma: no cover
                                         '--beam={}'.format(beam),
                                         '--max-active={}'.format(max_active), '--lattice-beam={}'.format(lattice_beam),
                                         '--word-symbol-table=' + words_path,
-                                        mdl_path, 'ark:' + graphs_path, 'ark:' + feat_path, 'ark:' + lat_path],
+                                        mdl_path, 'ark:' + graphs_path, 'scp:' + feat_path, 'ark:' + lat_path],
                                        stderr=logf)
         latgen_proc.communicate()
 
