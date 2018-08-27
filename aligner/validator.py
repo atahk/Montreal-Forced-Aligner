@@ -447,7 +447,7 @@ class CorpusValidator(object):
                 for utt, (insertions, deletions, ref_text, text) in sorted(errors.items(),
                                                                            key=lambda x: -1 * (
                                                                                    len(x[1][1]) + len(x[1][2]))):
-                    problemf.write('{},{},{},{},{}\n'.format(utt, ', '.join(insertions), ', '.join(deletions),
+                    problemf.write('{},{},{},{},{}\n'.format(utt, ' '.join(insertions), ' '.join(deletions),
                                                              ' '.join(ref_text), ' '.join(text)))
             message = 'There were {} of {} utterances with at least one transcription issue. '\
                   'Please see the outputted csv file {}.'.format(len(errors), self.corpus.num_utterances, out_path)
